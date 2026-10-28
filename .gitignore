@@ -1,0 +1,10 @@
+# Local environment configuration; keep a safe example if needed.
+.env
+.env.*
+!.env.example
+
+# Common operating system and editor temporary files.
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
