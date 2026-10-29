@@ -4,7 +4,7 @@ Mygit is a starting place for planning, building, testing, and preparing a softw
 
 ## Current status
 
-The repository contains starter documentation only. There is no runnable application, automated test suite, or deployment setup yet.
+The repository includes a small project-brief readiness checker and automated tests. The product, platform, and deployment setup remain undecided.
 
 ## Get started
 
@@ -15,14 +15,28 @@ The repository contains starter documentation only. There is no runnable applica
    cd Mygit
    ```
 
-2. Define the project in the [project brief](docs/project-brief.md) and choose a small first milestone from the [roadmap](ROADMAP.md).
-3. Once the project and tools are chosen, add code and tests, then update this README with prerequisites, setup, run, and test instructions.
+2. Install Python 3.9 or newer. No third-party packages are required.
+3. Run the brief checker from the repository root:
+
+   ```sh
+   python3 src/brief_check.py
+   ```
+
+   On Windows, use `py -3 src/brief_check.py`. Edit [the project brief](docs/project-brief.md) to replace the `To decide` placeholders. The checker lists placeholders in the brief's two-column table and milestone fields; it does not judge whether answers are meaningful. Exit codes: `0` means no matching placeholders, `1` means decisions remain, and `2` means the file could not be read. To check a different brief, pass its path as an argument.
+
+4. Run the tests from the repository root:
+
+   ```sh
+   python3 -m unittest discover -s tests -v
+   ```
+
+   On Windows, use `py -3 -m unittest discover -s tests -v`. Choose the next milestone from the [roadmap](ROADMAP.md).
 
 ## Repository guide
 
 | Path | Purpose |
 | --- | --- |
-| [src/](src/) | Project source code when development begins. |
+| [src/](src/) | Project source code, including the brief checker. |
 | [tests/](tests/) | Automated tests and test resources. |
 | [docs/](docs/) | Project notes, beginning with the project brief. |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to propose, check, and submit changes. |
