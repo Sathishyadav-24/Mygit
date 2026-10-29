@@ -31,5 +31,5 @@ For a substantial feature or change in direction, open an issue describing the g
 ## Before submitting
 
 - Check that no passwords, keys, private information, generated dependencies, or local environment files are included.
-- Run the applicable checks and mention their results in the pull request. There are no automated tests configured yet; for now, describe any manual checks you performed.
+- Run the applicable checks and mention their results in the pull request. Run `python3 -m unittest discover -s tests -v` (or `py -3 -m unittest discover -s tests -v` on Windows).
 - Keep setup and usage instructions current when the behavior or required tools change.
